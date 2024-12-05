@@ -1,0 +1,293 @@
+[
+    {
+        "id": 1,
+        "nombre": "Stiven",
+        "apellido": "Torres",
+        "direccion": "Casa",
+        "telefono": "0989883013",
+        "tipo": "CEDULA",
+        "identificacion": "1150096681",
+        "generadores": {
+            "stackOperation": {
+                "top": 10,
+                "header": {
+                    "info": {
+                        "id": 3,
+                        "coste": 10.0,
+                        "consumo": 12.0,
+                        "potencia": 13.0,
+                        "uso": "Uso Personal"
+                    },
+                    "next": {
+                        "info": {
+                            "id": 2,
+                            "coste": 10.0,
+                            "consumo": 12.0,
+                            "potencia": 13.0,
+                            "uso": "Electrodomesticos "
+                        },
+                        "next": {
+                            "info": {
+                                "id": 1,
+                                "coste": 10.0,
+                                "consumo": 12.0,
+                                "potencia": 13.0,
+                                "uso": "Electrodomesticos "
+                            }
+                        }
+                    }
+                },
+                "last": {
+                    "info": {
+                        "id": 1,
+                        "coste": 10.0,
+                        "consumo": 12.0,
+                        "potencia": 13.0,
+                        "uso": "Electrodomesticos "
+                    }
+                },
+                "size": 3
+            }
+        },
+        "tieneGenerador": false
+    },
+    {
+        "id": 2,
+        "nombre": "Delia",
+        "apellido": "Quevedo",
+        "direccion": "Casa",
+        "telefono": "0989283012",
+        "tipo": "PASAPORTE",
+        "identificacion": "1150096682",
+        "generadores": {
+            "stackOperation": {
+                "top": 10,
+                "header": {
+                    "info": {
+                        "id": 7,
+                        "coste": 1000.0,
+                        "consumo": 12.0,
+                        "potencia": 80.0,
+                        "uso": "Uso Personal"
+                    },
+                    "next": {
+                        "info": {
+                            "id": 6,
+                            "coste": 10.0,
+                            "consumo": 12.0,
+                            "potencia": 80.0,
+                            "uso": "Electrodomesticos "
+                        },
+                        "next": {
+                            "info": {
+                                "id": 4,
+                                "coste": 10.0,
+                                "consumo": 12.0,
+                                "potencia": 13.0,
+                                "uso": "Electrodomesticos "
+                            }
+                        }
+                    }
+                },
+                "last": {
+                    "info": {
+                        "id": 4,
+                        "coste": 10.0,
+                        "consumo": 12.0,
+                        "potencia": 13.0,
+                        "uso": "Electrodomesticos "
+                    }
+                },
+                "size": 3
+            }
+        },
+        "tieneGenerador": false
+    },
+    {
+        "id": 3,
+        "nombre": "Joel",
+        "apellido": "Jimenez",
+        "direccion": "Peñas",
+        "telefono": "0989283012",
+        "tipo": "CEDULA",
+        "identificacion": "1150096683",
+        "generadores": {
+            "stackOperation": {
+                "top": 10,
+                "header": {
+                    "info": {
+                        "id": 5,
+                        "coste": 1000.0,
+                        "consumo": 12.0,
+                        "potencia": 80.0,
+                        "uso": "Alimentar al local familiar"
+                    }
+                },
+                "last": {
+                    "info": {
+                        "id": 5,
+                        "coste": 1000.0,
+                        "consumo": 12.0,
+                        "potencia": 80.0,
+                        "uso": "Alimentar al local familiar"
+                    }
+                },
+                "size": 1
+            }
+        },
+        "tieneGenerador": false
+    },
+    {
+        "id": 4,
+        "nombre": "Deivy",
+        "apellido": "Guaman",
+        "direccion": "Loja",
+        "telefono": "0989883013",
+        "tipo": "CEDULA",
+        "identificacion": "1150096684",
+        "generadores": {
+            "stackOperation": {
+                "top": 10,
+                "header": {
+                    "info": {
+                        "id": 9,
+                        "coste": 1000.0,
+                        "consumo": 1.0,
+                        "potencia": 800.0,
+                        "uso": "Alimentacion del local de tienda "
+                    },
+                    "next": {
+                        "info": {
+                            "id": 8,
+                            "coste": 830.0,
+                            "consumo": 3.0,
+                            "potencia": 80.0,
+                            "uso": "WIFI "
+                        }
+                    }
+                },
+                "last": {
+                    "info": {
+                        "id": 8,
+                        "coste": 830.0,
+                        "consumo": 3.0,
+                        "potencia": 80.0,
+                        "uso": "WIFI "
+                    }
+                },
+                "size": 2
+            }
+        },
+        "tieneGenerador": false
+    },
+    {
+        "id": 5,
+        "nombre": "Felipe",
+        "apellido": "Guarnizo",
+        "direccion": "Las Lajas",
+        "telefono": "0989273412",
+        "tipo": "CEDULA",
+        "identificacion": "1150096685",
+        "tieneGenerador": false
+    },
+    {
+        "id": 6,
+        "nombre": "Zully",
+        "apellido": "Vicente",
+        "direccion": "Cariamanga",
+        "telefono": "0989273413",
+        "tipo": "CEDULA",
+        "identificacion": "1150096686",
+        "tieneGenerador": false
+    },
+    {
+        "id": 7,
+        "nombre": "john",
+        "apellido": "Jimenez",
+        "direccion": "Amaluza",
+        "telefono": "098927344",
+        "tipo": "CEDULA",
+        "identificacion": "1150096687",
+        "tieneGenerador": false
+    },
+    {
+        "id": 8,
+        "nombre": "Karen",
+        "apellido": "Guarnizo",
+        "direccion": "Las Palmas",
+        "telefono": "0989273455",
+        "tipo": "CEDULA",
+        "identificacion": "1150096688",
+        "tieneGenerador": false
+    },
+    {
+        "id": 9,
+        "nombre": "Luis",
+        "apellido": "Gomez",
+        "direccion": "San Juan",
+        "telefono": "0989273414",
+        "tipo": "CEDULA",
+        "identificacion": "1150096689",
+        "tieneGenerador": false
+    },
+    {
+        "id": 10,
+        "nombre": "Maria",
+        "apellido": "Perez",
+        "direccion": "Ciudadela",
+        "telefono": "0989273415",
+        "tipo": "CEDULA",
+        "identificacion": "1150096690",
+        "tieneGenerador": false
+    },
+    {
+        "id": 11,
+        "nombre": "Carlos",
+        "apellido": "Ortiz",
+        "direccion": "San Pablo",
+        "telefono": "0989273416",
+        "tipo": "CEDULA",
+        "identificacion": "1150096691",
+        "tieneGenerador": false
+    },
+    {
+        "id": 12,
+        "nombre": "Ana",
+        "apellido": "Mendoza",
+        "direccion": "La Florida",
+        "telefono": "0989273417",
+        "tipo": "CEDULA",
+        "identificacion": "1150096692",
+        "tieneGenerador": false
+    },
+    {
+        "id": 13,
+        "nombre": "David",
+        "apellido": "Salinas",
+        "direccion": "San Antonio",
+        "telefono": "0989273418",
+        "tipo": "CEDULA",
+        "identificacion": "1150096693",
+        "tieneGenerador": false
+    },
+    {
+        "id": 14,
+        "nombre": "Elena",
+        "apellido": "Reyes",
+        "direccion": "Santa Rosa",
+        "telefono": "0989273419",
+        "tipo": "CEDULA",
+        "identificacion": "1150096694",
+        "tieneGenerador": false
+    },
+    {
+        "id": 15,
+        "nombre": "Oscar",
+        "apellido": "Valle",
+        "direccion": "Los Andes",
+        "telefono": "0989273420",
+        "tipo": "CEDULA",
+        "identificacion": "1150096695",
+        "tieneGenerador": false
+    }
+]
