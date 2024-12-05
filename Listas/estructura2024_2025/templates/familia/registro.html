@@ -1,0 +1,51 @@
+{% extends "template.html" %}
+{% block content %}
+<div class="container">
+    <h1 class="text-center my-4">Registro de Familias</h1>
+    <section class="section">
+        <div class="row justify-content-center">
+            <div class="card col-md-8">
+                <div class="card-header text-center">
+                    <h5 class="card-title">Formulario de Registro</h5>
+                </div>
+                <div class="card-body">
+                    <form class="row g-3 needs-validation" method="POST" action="/admin/person/save" novalidate>
+                        <div class="col-md-6">
+                            <label for="tipo" class="form-label">Tipo de Identificación</label>
+                            <select class="form-control" required name="tipo">
+                                {% for item in lista %}
+                                <option value="{{ item }}">{{ item }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="iden" class="form-label">Identificación</label>
+                            <input type="text" class="form-control" name="iden" required placeholder="Ingrese su identificación">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="ape" class="form-label">Apellido</label>
+                            <input type="text" class="form-control" name="ape" required placeholder="Ingrese su apellido">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="nom" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" name="nom" required placeholder="Ingrese su nombre">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="fono" class="form-label">Teléfono/Celular</label>
+                            <input type="text" class="form-control" name="fono" required placeholder="Ingrese su teléfono">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="dir" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" name="dir" required placeholder="Ingrese su dirección">
+                        </div>
+                        <div class="col-12 text-center mt-4">
+                            <button class="btn btn-primary" type="submit">Registrar</button>
+                            <a href="/admin/person/list" class="btn btn-secondary">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

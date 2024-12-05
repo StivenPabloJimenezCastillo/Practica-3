@@ -1,0 +1,41 @@
+{% extends "template.html" %}
+{% block content %}
+<div>
+    <h1>EDITAR GENERADORES</h1>
+</div>
+
+<section class="section">
+    <div class="row">
+        <div class="card">
+            <div>
+                <h5 class="card-title">Edision</h5>
+                <form class="row g-3 needs-validation" method="POST" action="/admin/person/update/generador" novalidate>
+                    <input type="hidden" value="{{ lista.id }}" name="id"/>
+                    <div class="col-md-6">
+                        <label for="coste" class="form-label">Costo</label>
+                        <input type="number" class="form-control" name="coste" required value="{{ lista.coste }}" step="0.01" min="0">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="consumo" class="form-label">Consumo</label>
+                        <input type="number" class="form-control" name="consumo" required value="{{ lista.consumo }}" step="0.01" min="0">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="potencia" class="form-label">Potencia</label>
+                        <input type="number" class="form-control" name="potencia" required value="{{ lista.potencia }}" step="0.01" min="0">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="uso" class="form-label">Uso</label>
+                        <input type="text" class="form-control" name="uso" required value="{{ lista.uso }}">
+                    </div>
+                    <div class="col-6">
+                        <button class="btn btn-success" type="submit">GUARDAR</button>
+                    </div>
+                    <div class="col-6">
+                        <a href="/admin/person/list" class="btn btn-danger">CANCELAR</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

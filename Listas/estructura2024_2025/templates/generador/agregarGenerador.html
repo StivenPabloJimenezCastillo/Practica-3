@@ -1,0 +1,39 @@
+{% extends "template.html" %}
+{% block content %}
+<div class="container">
+    <h1 class="text-center my-4">Registrar Generador</h1>
+    <section class="section">
+        <div class="row justify-content-center">
+            <div class="card col-md-8">
+                <div class="card-header text-center">
+                    <h5 class="card-title">Formulario de Registro</h5>
+                </div>
+                <div class="card-body">
+                    <form class="row g-3 needs-validation" method="POST" action="/save/generador/{{ family_id }}" novalidate>
+                        <div class="col-md-6">
+                            <label for="coste" class="form-label">Costo</label>
+                            <input type="text" class="form-control" name="coste" required placeholder="Precio del generador">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="consumo" class="form-label">Consumo</label>
+                            <input type="text" class="form-control" name="consumo" required placeholder="Consumo">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="potencia" class="form-label">Potencia</label>
+                            <input type="text" class="form-control" name="potencia" required placeholder="Potencia del generador">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="uso" class="form-label">Uso</label>
+                            <input type="text" class="form-control" name="uso" required placeholder="Uso del generador">
+                        </div>
+                        <div class="col-12 text-center mt-4">
+                            <button class="btn btn-primary" type="submit">Registrar</button>
+                            <a href="/admin/generators/view/{{ family_id }}" class="btn btn-secondary">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,170 @@
+{% extends "template.html" %}
+{% block content %}
+
+
+<div class="container">
+    <div class="pagetitle">
+        <h1 class="text-center my-4">LISTA DE FAMILIAS</h1>
+    </div>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Familias</h5>
+                        <div class="mb-3">
+                            <a href="/admin/person/register" class="btn btn-success">
+                                <i class="fas fa-plus"></i> Nuevo
+                            </a>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <div class="col-lg-10" > 
+                                    <h5 class="card-title">ORDEN</h5>
+                                    <div class="row mb-4">
+                                        
+                                        <div class="row mx-4">
+                                            <label class="row mx-2">Criterio:</label>
+                                            <select id="criterio">
+                                                <option value="nombre">Nombre</option>
+                                                <option value="apellido">Apellido</option>
+                                            </select>
+                                        </div>
+                                        <div class="row mx-4">
+                                            <label class="row mx-2">Método:</label>
+                                            <select id="metodo">                   
+                                                <option value="quick">QuickSort</option>
+                                                <option value="merge">MergeSort</option>
+                                                <option value="shell">ShellSort</option>
+                                            </select>
+                                        </div>
+                                        <div class="row mx-4">
+                                            <label class="row mx-2">Tipo:</label>
+                                            <select id="tipo">                   
+                                                <option value="0">Acendente</option>
+                                                <option value="1">Desendente</option>
+                                            </select>
+                                        </div>
+                                            <button class="btn btn-info"  id="link">ORDENAR</button>          
+                                    </div>
+                                  </div>
+
+                                  <h5 class="card-title">BUSQUEDA</h5>
+
+                                <div class="row mb-4">
+                                  <div class="col-lg-6">
+                                    <label>Método</label>
+                                    <select id="method" class="form-control">
+                                        <option value="binary">Binario</option>
+                                        <option value="linearbinary">Lineal Binario</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Criterio</label>
+                                    <select id="attribute" class="form-control">
+                                        <!-- Opciones iniciales; serán dinámicas -->
+                                        <option value="identificacion">Identificación</option>
+                                    </select>
+                                </div>
+                                    <div class="col-lg-6 mt-3">
+                                        <label>Valor</label>
+                                        <input id="value" class="form-control" placeholder="Buscar">
+                                    </div>
+                                    <div class="col-lg-6 mt-3 d-flex align-items-end">
+                                        <button id="btn" class="btn btn-primary w-100">Buscar</button>
+                                    </div>
+                                </div>
+        
+                                <thead>
+                                    <tr>
+                                        <th>Nro</th>
+                                        <th>Cliente</th>
+                                        <th>Identificación</th>
+                                        <th>Tipo</th>
+                                        <th>Dirección</th>
+                                        <th class="text-center">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in lista %}
+                                    <tr>
+                                        <td>{{ loop.index }}</td>
+                                        <td>{{ item.apellido }} {{ item.nombre }}</td>
+                                        <td>{{ item.identificacion }}</td>
+                                        <td>{{ item.tipo }}</td>
+                                        <td>{{ item.direccion }}</td>
+                                        <td class="text-center">
+                                            <a href="/admin/person/edit/{{ item.id }}" class="btn btn-info" title="Modificar">
+                                                <i class="fas fa-edit"></i> Modificar
+                                            </a>
+                                            <a href="/admin/generators/view/{{ item.id }}" class="btn btn-warning" title="Ver Generadores">
+                                                <i class="fas fa-eye"></i> Ver Generadores
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    document.getElementById('link').addEventListener('click', function() {
+        // Obtener los valores seleccionados
+        const algoritmo = document.getElementById('metodo').value;
+        const atributo = document.getElementById('criterio').value;
+        const tipo = document.getElementById('tipo').value;
+        const url = `/admin/person/order/${algoritmo}/${atributo}/${tipo}/`;
+        window.location.href = url;
+    });
+</script>
+
+<script>
+    document.getElementById('btn').addEventListener('click', function () {
+        const method = document.getElementById('method').value;
+        const attribute = document.getElementById('attribute').value;
+        const value = document.getElementById('value').value.trim();
+
+        if (!value) {
+            alert("Por favor, ingrese un valor para buscar.");
+            return;
+        }
+
+        const url = `/admin/person/search/${method}/${attribute}/${value}`;
+        window.location.href = url;
+    });
+</script>
+
+<script>
+    document.getElementById('method').addEventListener('change', function () {
+        const method = this.value;
+        const attribute = document.getElementById('attribute');
+        attribute.innerHTML = '';
+
+        if (method === 'binary') {
+            const option = document.createElement('option');
+            option.value = 'identificacion';
+            option.textContent = 'Identificación';
+            attribute.appendChild(option);
+        } else if (method === 'linearbinary') {
+            const options = [
+                { value: 'nombre', text: 'Nombre' },
+                { value: 'apellido', text: 'Apellido' }
+            ];
+            options.forEach(opt => {
+                const option = document.createElement('option');
+                option.value = opt.value;
+                option.textContent = opt.text;
+                attribute.appendChild(option);
+            });
+        }
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "template.html" %}
+{% block content %}
+<div class="container">
+    <div class="pagetitle">
+        <h1 class="text-center my-4">LISTA DE GENERADORES</h1>
+    </div>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Clientes</h5>
+                        <div class="mb-3">
+                            <a href="/admin/person/list" class="btn btn-danger">
+                                <i class="fas fa-arrow-left"></i> Volver
+                            </a>
+                            <a href="/admin/generador/register/{{ family_id }}" class="btn btn-success">
+                                <i class="fas fa-plus"></i> Agregar
+                            </a>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Nro</th>
+                                        <th>Costo</th>
+                                        <th>Consumo</th>
+                                        <th>Potencia</th>
+                                        <th>Uso</th>
+                                        <th class="text-center">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in lista %}
+                                    <tr>
+                                        <td>{{ loop.index }}</td>
+                                        <td>{{ item.coste }} $</td>
+                                        <td>{{ item.consumo }} L</td>
+                                        <td>{{ item.potencia }} kW</td>
+                                        <td>{{ item.uso }}</td>
+                                        <td class="text-center">
+                                            <a href="/admin/generador/edit/{{ item.id }}" class="btn btn-info" title="Modificar">
+                                                <i class="fas fa-edit"></i> Modificar
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

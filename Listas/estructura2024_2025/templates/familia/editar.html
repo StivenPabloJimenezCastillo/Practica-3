@@ -1,0 +1,56 @@
+{% extends "template.html" %}
+{% block content %}
+<div>
+    <h1>EDITAR CLIENTES</h1>
+
+</div>
+
+<section class="section">
+    <div class="row">
+        <div class="card">
+            <div>
+                <h5 class="card-title">Edision de Clientes</h5>
+                <form class="row g-3 needs-validation" method="POST" action="/admin/person/update" novalidate>
+                <input type="hidden" value="{{person.id}}" name="id"/>
+                    <div class="col-md-6">
+                        <label for="lbltipo" class="form-label">Tipo de Identificacion</label>
+                        <select class="form-control" required name="tipo">
+                            {% for item in lista%}
+                            <option value="{{item}}">{{item}}</option>
+                            {% endfor%}
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom01" class="form-label">Identificacion</label>
+                        <input type="text" class="form-control" name="iden" required value={{person.identificacion}}>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom02" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" name="ape" required value={{person.apellido}}>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom02" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" name="nom" required value={{person.nombre}}>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom02" class="form-label">Telefono/celular</label>
+                        <input type="text" class="form-control" name="fono" required value={{person.telefono}}>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom02" class="form-label">Direccion</label>
+                        <input type="text" class="form-control" name="dir" required value={{person.direccion}}>
+                    </div>
+                    <div class="col-6">
+                        <button class= "btn btn-success" type="submit">GUARDAR</button>
+                    </div>
+                    <div class="col-6">
+                        <a href="/admin/person/list" class="btn btn-danger">CANCELAR</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+    
+{% endblock%}
